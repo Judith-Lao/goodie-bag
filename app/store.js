@@ -14,3 +14,17 @@ export default createStore(
     loggingMiddleware
   ))
 )
+
+const GET_CANDIES = "GET_CANDIES"
+const getCandies = () => ({
+  type: GET_CANDIES
+})
+
+
+
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case GET_CANDIES:
+      return
+  }
+}
