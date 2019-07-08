@@ -1,6 +1,19 @@
 'use strict'
+const express = require("express"); //added
+const Sequelize = require('sequelize') //added
+
+const Candies = require('../db/models/Candy')
 
 const router = require('express').Router()
+
+router.get('/candies', async (req, res, next) => {
+  try {
+    let allCandies = await Candies.findAll();
+    res.send(allCandies)
+  } catch (error) {
+    next(error)
+  }
+})
 
 // Your routes go here!
 // NOTE: Any routes that you put here are ALREADY mounted on `/api`
